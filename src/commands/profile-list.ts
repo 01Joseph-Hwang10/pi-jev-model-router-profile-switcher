@@ -40,5 +40,6 @@ export async function handleProfileList(
   if (selectedIndex !== -1) {
     const chosenProfileName = profileNames[selectedIndex];
     await handleProfileSwitch(chosenProfileName, runtime, context);
+    return;
   }
 }

@@ -26,13 +26,10 @@ export async function handleProfileSwitch(
   }
 
   try {
-    const reloadFunction =
-      typeof context.reload === "function" ? async () => context.reload() : undefined;
-
-    const result = await runtime.switchProfile(targetProfileName, reloadFunction);
+    const result = await runtime.switchProfile(targetProfileName);
     updateStatusBar(context.ui, result.currentProfileName);
 
-    const message = `Switched Jev router profile to "${result.currentProfileName}". Active configuration written to ${result.routerConfigurationPath}.${result.reloaded ? " Runtime reloaded." : ""}`;
+    const message = `Switched Jev router profile to "${result.currentProfileName}". Active configuration written to ${result.routerConfigurationPath}.`;
     context.ui.notify(message, "info");
 
     // Optional advisory for pi-account-switcher accounts
@@ -52,6 +49,12 @@ export async function handleProfileSwitch(
       if (warnings.length > 0) {
         context.ui.notify(warnings.join("\n"), "warning");
       }
+    }
+
+    // Reload is terminal. Do not use context after await context.reload().
+    if (typeof context.reload === "function") {
+      await context.reload();
+      return;
     }
   } catch (error) {
     context.ui.notify(

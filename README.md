@@ -25,7 +25,7 @@ Inspired by [`pi-account-switcher`](https://pi.dev/packages/pi-account-switcher)
   - **Delete**: Permanently remove profiles with confirmation guards (`/jev-profile-remove`).
   - **Clone**: Duplicate profiles quickly (`/jev-profile-clone`).
 - **Seamless Live Reload**: Automatically updates `pi-jev-model-router.json` and triggers runtime reload so new routing rules apply immediately without restarting Pi.
-- **Status Bar Integration**: Keeps the active profile name visible in Pi's status bar (`Jev: google`).
+- **Status Bar Integration**: Keeps the active profile name visible in Pi's status bar (`jev-profile: google`).
 - **`pi-account-switcher` Awareness**: Reports account configuration status for the providers used in your active profile.
 
 ---

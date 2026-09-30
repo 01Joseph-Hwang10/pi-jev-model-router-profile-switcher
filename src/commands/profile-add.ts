@@ -143,6 +143,7 @@ export async function handleProfileAdd(
 
     if (shouldSwitchNow) {
       await handleProfileSwitch(targetProfileName, runtime, context);
+      return;
     }
   } catch (error) {
     context.ui.notify(

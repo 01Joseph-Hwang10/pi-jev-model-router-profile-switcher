@@ -13,7 +13,7 @@ export function updateStatusBar(
   }
 
   if (activeProfileName) {
-    uiContext.setStatus(STATUS_BAR_KEY, `Jev: ${activeProfileName}`);
+    uiContext.setStatus(STATUS_BAR_KEY, `jev-profile: ${activeProfileName}`);
   } else {
     uiContext.setStatus(STATUS_BAR_KEY, undefined);
   }
