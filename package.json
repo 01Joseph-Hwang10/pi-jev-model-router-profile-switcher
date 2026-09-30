@@ -1,0 +1,50 @@
+{
+  "name": "pi-jev-model-router-profile-switcher",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Switch and manage dynamic routing profiles for pi-jev-model-router in the Pi coding agent.",
+  "license": "MIT",
+  "author": "Joseph Hwang",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi",
+    "jev",
+    "model-router",
+    "profile-switcher",
+    "routing",
+    "account-switcher"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/01Joseph-Hwang10/pi-jev-model-router-profile-switcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/01Joseph-Hwang10/pi-jev-model-router-profile-switcher/issues"
+  },
+  "homepage": "https://github.com/01Joseph-Hwang10/pi-jev-model-router-profile-switcher#readme",
+  "files": [
+    "src",
+    "README.md",
+    "USAGE.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.87.1",
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2",
+    "vitest": "^2.1.8"
+  },
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  }
+}
